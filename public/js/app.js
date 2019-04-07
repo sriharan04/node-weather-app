@@ -6,7 +6,8 @@ inputLocation.addEventListener('submit',(e)=>{
     e.preventDefault()
     const Location=search.value
     messageOne.textContent='Loading..'
-    fetch('http://localhost:3000/weather?address='+Location).then((response)=>{
+    messageTwo.textContent=''
+    fetch('/weather?address='+Location).then((response)=>{
  response.json().then((data)=>{
      if (data.error)
      {
