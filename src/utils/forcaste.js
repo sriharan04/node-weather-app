@@ -10,9 +10,10 @@ const forcaste=(latitute,longitude,callback)=>{
        }
        else
        {
+           console.log(body.daily.data[0])
        callback(undefined,
-           body.currently.temperature+
-           body.currently.precipProbability+
+           'The tempersture is'+body.currently.temperature+'The high today is'+body.daily.data[0].temperatureHigh+' with a low of'+body.daily.data[0].temperatureLow +' and there is  '+
+           body.currently.precipProbability+'%'+
            body.daily.data[0].summary
        )
        }
